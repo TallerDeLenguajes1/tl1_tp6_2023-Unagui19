@@ -1,33 +1,31 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-int a;
-int b;
-a=10;
-b=a;
-Console.WriteLine("valor de a:"+a);
-Console.WriteLine("valor de b:"+b);
-
-bool anda=false;
-int floatNum1=0;
-string numString="";
-while (!anda)
-{
-    Console.WriteLine("Ingrese un valor válido");
-    numString= Console.Readline();
-    anda = float.tryparse(numString, out floatNum1);
-
-    if (!anda)
-    {
-        Console.WriteLine(numString+" no es un número valido");
-    }
-    else
-    {
-        numString.
-    }
-    
-
-}
+﻿bool anda=false;
+int num=0, i=0;
+double aux=0;
+string? numString="";
 
 Console.WriteLine("Ingrese un numero entero");
+// Console.ReadLine();
+numString= Console.ReadLine();
+anda = int.TryParse(numString, out num);
 
-Console.Readline();
+while (!anda)
+{
+    Console.WriteLine(numString+" no es un número valido");
+    Console.WriteLine("Ingrese un valor válido");
+    numString= Console.ReadLine();
+    anda = int.TryParse(numString, out num);
+}
+
+i=numString.Length-1;
+do
+{
+    
+    aux+=(num % 10) * Math.Pow(10,i);
+    // Console.WriteLine("aux= "+aux);
+    num=num/10;
+    // Console.WriteLine("num="+num);
+    i--;
+}
+while(num!=0);
+
+Console.WriteLine("Numero Invertido: "+aux);
