@@ -15,21 +15,22 @@ valido = int.TryParse(ingreso, out opcion);
 while (!valido)
 {
     Console.WriteLine("Valor incorrecto, ingrese un valor nuevamente: ");
+    ingreso = Console.ReadLine();
     valido = int.TryParse(ingreso, out opcion);
 }
 
 
-int num1 = 0, num2 = 0, resultado;
+double num1 = 0, num2 = 0, resultado;
 
 Console.WriteLine("\nIngrese 2 numeros para operar: ");
 Console.WriteLine("Numero 1: ");
 ingreso = Console.ReadLine();
-valido = int.TryParse(ingreso, out num1);
+valido = double.TryParse(ingreso, out num1);
 if (valido)
 {
     Console.WriteLine("\nNumero 2: ");
     ingreso = Console.ReadLine();
-    valido = int.TryParse(ingreso, out num2);
+    valido = double.TryParse(ingreso, out num2);
 
     if (valido)
     {
@@ -58,24 +59,24 @@ if (valido)
 
 
 
-int Suma(int num1, int num2)
+double Suma(double num1, double num2)
 {
     return num1 + num2;
 }
 
-int Resta(int num1, int num2)
+double Resta(double num1, double num2)
 {
 
     return num1 - num2;
 }
 
-int Multipicacion(int num1, int num2)
+double Multipicacion(double num1, double num2)
 {
 
     return num1 * num2;
 }
 
-int Division(int num1, int num2)
+double Division(double num1, double num2)
 {
 
     return num1 / num2;
